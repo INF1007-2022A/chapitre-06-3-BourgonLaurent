@@ -6,12 +6,12 @@ import copy
 import itertools
 
 
-def get_maximums(numbers):
-    return [0]
+def get_maximums(numbers: list[list[int]]) -> list[int]:
+    return [max(n) for n in numbers]
 
 
-def join_integers(numbers):
-    return 0
+def join_integers(numbers: list[int]) -> int:
+    return int("".join([str(n) for n in numbers]))
 
 
 def generate_prime_numbers(limit):
