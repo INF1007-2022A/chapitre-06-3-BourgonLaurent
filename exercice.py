@@ -14,8 +14,14 @@ def join_integers(numbers: list[int]) -> int:
     return int("".join([str(n) for n in numbers]))
 
 
-def generate_prime_numbers(limit):
-    return [0]
+def generate_prime_numbers(limit: int):
+    premiers = []
+    nombres = [i for i in range(2, limit + 1)]
+    while nombres:
+        premiers.append(nombres[0])
+        nombres = [n for n in nombres if n % nombres[0] != 0]
+
+    return premiers
 
 
 def combine_strings_and_numbers(strings, num_combinations, excluded_multiples):
