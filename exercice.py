@@ -24,8 +24,20 @@ def generate_prime_numbers(limit: int):
     return premiers
 
 
-def combine_strings_and_numbers(strings, num_combinations, excluded_multiples):
-    return [""]
+def combine_strings_and_numbers(
+    strings: list[str],
+    num_combinations: int,
+    excluded_multiples: int | None,
+) -> list[str]:
+    resultat = []
+
+    for i in range(1, num_combinations + 1):
+        if excluded_multiples and i % excluded_multiples == 0:
+            continue
+        else:
+            resultat.extend([s + str(i) for s in strings])
+
+    return resultat
 
 
 if __name__ == "__main__":
